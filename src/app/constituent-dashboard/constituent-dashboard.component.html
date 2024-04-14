@@ -1,0 +1,15 @@
+<div class="constituent-dashboard">
+    <lib-tab-menu [items]="items" (activeItemChange)="onActiveItemChange($event)">
+    </lib-tab-menu>
+    <div class="card-container">
+        <div *ngIf="currentTab && currentTab.label == cardLabelEnum.LEROM">
+            <app-cards [content]="leromContent" [type]="cardLabelEnum.LEROM"></app-cards>
+        </div>
+        <div *ngIf="currentTab && currentTab.label == cardLabelEnum.IPSUM">
+            <app-cards [content]="ipsumContent" [type]="cardLabelEnum.IPSUM"></app-cards>
+        </div>
+        <div *ngIf=" currentTab && currentTab.label== cardLabelEnum.DOLOR">
+            <app-cards [content]="dolorContent" [type]="cardLabelEnum.DOLOR"></app-cards>
+        </div>
+    </div>
+</div>

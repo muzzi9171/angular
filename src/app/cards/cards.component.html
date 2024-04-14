@@ -1,0 +1,189 @@
+<div cdkDropList class="card" (cdkDropListDropped)="drop($event)">
+    @for (card of content; track card) {
+    <div cdkDrag>
+        <div class="card-container" (click)="expandEvent(card)">
+            <div [ngClass]="card.expand == true ? 'card-top-container-expand': 'card-top-container-collapse'">
+                <div class="card-picture-name-container">
+                    <div class="card-picture">
+                        <img class="card-image" alt="" src="./assets/images/image.png" />
+                    </div>
+                    <div class="card-name">
+                        <div class="dan-hart-30">{{ card.name }}, {{ card.age }}</div>
+                        <div class="card-location">
+                            <div class="card-location-name">{{card.leftLabelName}}</div>
+                            <div class="card-location-label">{{ card.leftLabelValue }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-icon-container">
+                    <div class="card-icon">
+                        <img class="prospect-1-child" alt="" src="./assets/images/svgs/vector-280.svg" />
+                        <img class="prospect-2-child" alt="" src="./assets/images/svgs/group-515275.svg" />
+                    </div>
+                    <div class="card-icon-name-container">
+                        <div class="card-icon-name">{{ card.rightLabelName }}</div>
+                        <div class="card-icon-name-label"><sup>$</sup>125 (25/ea)</div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="card.expand && type == 'Lerom'" class="card-bottom-container">
+                <div class="card-bottom-option-container">
+                    <div class="card-bottom-option-title">Options:</div>
+                    <div class="card-bottom-option-item">Item 1 Lorem Ipsum
+                        Item Two</div>
+                </div>
+                <div class="card-bottom-profle-description-container">
+                    <div class="profile-description">
+                        <div class="profile-description-title">Preferences Profile</div>
+                        <div class="profile-description-item">{{ card.preferenceProfile }}</div>
+                    </div>
+                    <div class="profile-description">
+                        <div class="profile-description-title">Lorem Ipsum</div>
+                        <div class="profile-description-item">{{ card.LoremIpsum }}</div>
+                    </div>
+                </div>
+                <div class="card-bottom-icon-container">
+                    <div class="card-icon-name-container">
+                        <div class="card-icon-name">Lorem</div>
+                        <div class="card-icon-name-label">{{ card.Lerom }}</div>
+                    </div>
+                    <div class="card-icon-dollor-container">
+                        <div class="card-icon-name">Dolor</div>
+                        <div class="card-icon-name-label">{{ card.Dolor }}</div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="card.expand && type == 'Ipsum'" class="card-bottom-container-ipsum">
+                <div class="card-bottom-option-container">
+                    <div class="preferences-setting">
+                        <div class="card-bottom-option-title-Ispum">Preferences Summary:</div>
+                        <div class="card-bottom-option-item">{{card.preferenceSummary}}</div>
+                    </div>
+                    <div>
+                        <div class="card-bottom-option-title-Ispum">Profile Summary:</div>
+                        <div class="card-bottom-option-item">{{card.profileSummary}}</div>
+                    </div>
+                </div>
+                <div class="card-bottom-profle-description-container">
+                    <div class="profile-description">
+                        <div class="profile-description-title">Preferences Profile</div>
+                        <div class="profile-description-item">{{ card.preferenceProfile }}</div>
+                    </div>
+                    <div class="profile-description">
+                        <div class="profile-description-title">Lorem Ipsum</div>
+                        <div class="profile-description-item">{{ card.LoremIpsum }}</div>
+                    </div>
+                    <div class="profile-description">
+                        <div class="profile-description-title">Weight/Height pref</div>
+                        <div class="profile-description-item">{{ card.weightHeight }}</div>
+                    </div>
+                    <div class="profile-description">
+                        <div class="profile-description-title">Lorem Ipsum Dolor</div>
+                        <div class="profile-description-item">{{ card.loremIpsumDolor }}</div>
+                    </div>
+                    <div class="profile-description">
+                        <div class="profile-description-title">Lorem Ipsum</div>
+                        <div class="profile-description-item">{{card.loremIpsum}}</div>
+                    </div>
+                </div>
+                <div class="card-bottom-icon-container">
+                    <div class="card-icon-name-container">
+                        <div class="card-icon-name">Lorem Ipsum</div>
+                        <div class="card-icon-name-label">{{card.loremIpsumOne}}</div>
+                    </div>
+                    <div class="card-icon-dollor-container">
+                        <div class="card-icon-name">Lorem Ipsum</div>
+                        <div class="card-icon-name-label">{{card.loremIpsumTwo }}</div>
+                    </div>
+                    <div class="card-icon-dollor-container">
+                        <div class="card-icon-name">Lorem Ipsum</div>
+                        <div class="card-icon-name-label">{{card.loremIpsumthree}}</div>
+                    </div>
+                    <div class="card-icon-dollor-container">
+                        <div class="card-icon-name">Lorem Ipsum</div>
+                        <div class="card-icon-name-label">{{ card.loremIpsumFour }}</div>
+                    </div>
+                    <div class="card-icon-dollor-container">
+                        <div class="card-icon-name">Lorem Ipsum</div>
+                        <div class="card-icon-name-label">{{ card.loremIpsumFive }}</div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="card.expand && type == 'Dolor'" class="card-bottom-container-ipsum">
+                <div class="card-bottom-option-container">
+                    <div class="preferences-setting">
+                        <div class="card-bottom-option-title-Ispum">Scores Summary:</div>
+                        <div class="card-bottom-option-item">30b 30w 31h
+                            Lorem 96
+                            Ipsum 90
+                            Dolor 70</div>
+                    </div>
+                    <div>
+                        <div class="card-bottom-option-title-Ispum">Profile Summary:</div>
+                        <div class="card-bottom-option-item">Masters
+                            EU Ivy League
+                            $500k+
+                            20 employees Soccer Scholarship
+                            Wrestling States</div>
+                    </div>
+                </div>
+                <div class="card-bottom-profle-description-container">
+                    <div class="profile-description">
+                        <div class="profile-description-title">Lorem Ipsum</div>
+                        <div class="profile-description-item">{{ card.age }}</div>
+                    </div>
+                    <div class="profile-description">
+                        <div class="profile-description-title">Weight/Height pref</div>
+                        <div class="profile-description-item">{{ card.weightHeight }}</div>
+                    </div>
+                    <div class="profile-description">
+                        <div class="profile-description-title">Lorem Ipsum Dolor</div>
+                        <div class="profile-description-item">{{ card.loremIpsumDolor }}</div>
+                    </div>
+                    <div class="profile-description">
+                        <div class="profile-description-title">Lorem Ipsum</div>
+                        <div class="profile-description-item">{{ card.loremIpsum }}</div>
+                    </div>
+                    <div class="profile-description preview-progress-bar">
+                               <div class="progress progress-striped">
+      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+        <span>80% Complete </span>
+      </div>
+    </div>
+
+    <div class="progress progress-striped">
+      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+        <span>40% Complete </span>
+      </div>
+    </div>
+                    </div>
+                </div>
+                <div class="card-bottom-icon-container">
+                    <div class="card-icon-name-container">
+                        <div class="card-icon-name">Lorem Ipsum</div>
+                        <div class="card-icon-name-label">30</div>
+                    </div>
+                    <div class="card-icon-dollor-container">
+                        <div class="card-icon-name">Lorem Ipsum</div>
+                        <div class="card-icon-name-label"><sup>$</sup> 1876 (~27/ea)</div>
+                    </div>
+                    <div class="card-icon-dollor-container">
+                        <div class="card-icon-name">Lorem Ipsum</div>
+                        <div class="card-icon-name-label">01-03-23 (1.2 years)</div>
+                    </div>
+                    <div class="card-icon-dollor-container">
+                        <div class="card-icon-name">Lorem Ipsum</div>
+                        <div class="card-icon-name-label">7.4 / 6.1+</div>
+                    </div>
+                    <div class="card-icon-dollor-container">
+                        <div class="card-icon-name">Lorem Ipsum</div>
+                        <div class="card-icon-name-label">5</div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="card.expand" class="more">see less...</div>
+            <div *ngIf="!card.expand" class="more">see more...</div>
+        </div>
+    </div>
+    }
+</div>
